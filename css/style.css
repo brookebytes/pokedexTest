@@ -342,7 +342,7 @@ h2, h3{
 /******************************************
 /* MEDIA QUERIES
 /*******************************************/
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .pokedex {
     flex-direction: column;
     align-items: center;
