@@ -1,21 +1,9 @@
 /******************************************
-/* CSS
+/* GENERAL STYLES
 /*******************************************/
-
 /* Box Model Hack */
-*{
+* {
   box-sizing: border-box;
-}
-
-/******************************************
-/* LAYOUT
-/*******************************************/
-img{
-  display: block;
-  margin: 0 auto;
-  width: 50%;
-  height: 50%;
-  margin-bottom: 5%;
 }
 
 body {
@@ -28,16 +16,48 @@ body {
   background-image: url('../img/wallpaper.png');
 }
 
-.searchMenu {
-  margin-bottom: 3%;
+input {
+  width: 250px;
+  font-size: 12pt;
+}
+
+button {
+  color: white;
+  background-color: #18A8FF;
+  width: 75px;
+  font-weight: bold;
+  font-size: 12pt;
 }
 
 h1 {
   color: white;
+  text-align: center;
 }
 
 h2, h3{
   margin-top: 0;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+  height: 50%;
+  margin-bottom: 5%;
+}
+
+.searchMenu {
+  margin-bottom: 3%;
+}
+
+input, button {
+  padding: 5pt;
+  border: 2pt solid #18A8FF;
+  border-radius: 3pt;
+}
+
+:-ms-input-placeholder{
+  color: rgb(208,208,0);
 }
 
 .pokedex {
@@ -47,7 +67,9 @@ h2, h3{
 }
 
 
-/******Pokedex Left Panel*******/
+/******************************************
+/* POKEDEX LEFT PANEL
+/*******************************************/
 .pokedexLeftPanel {
   display: flex;
   flex-direction: column;
@@ -63,43 +85,87 @@ h2, h3{
   height: 500px;
   box-shadow: 5px 10px 50pt #888888;
 }
-    .screen {
-      width: 275px;
-      height: 200px;
-      background-color: azure;
-      border: 12pt solid darkgrey;
-      border-bottom: 20pt solid darkgray;
-      border-top: 15pt solid darkgray;
-      border-radius: 3pt;
+  .pokeHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    border-bottom: 5pt solid black;
+    /*box-shadow: 5px 10px black;*/
+  }
+
+    #blueLight{
+      border-radius: 50%;
+      border: 2pt solid white;
+      background-color: turquoise;
+      background-image: radial-gradient(farthest-corner at 40px 10px ,aqua, white);
+      height: 50px;
+      width: 50px;
+      margin-left: 6%;
+      margin-bottom: 4%;
     }
 
-    .screenLit{
-      width: 243px;
-      height: 157px;
-      border: 3pt solid azure;
-      border-radius: 3pt;
+    #redLight, #yellowLight, #greenLight {
+      height: 15px;
+      width: 15px;
+      border: 1pt solid white;
+      border-radius: 50%;
+      margin-left: 1.75%;
     }
 
-    .screenBorder {
-      border: 2pt solid rgb(66, 65, 65);
-      box-shadow: 5px 10px 10pt gray;
-      border-radius: 5pt;
+    #yellowLight {
+      background-color: yellow;
     }
 
-    .screenLine1{
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      color: transparent;
-      text-shadow: 0 0 1px rgba(0,0,0,0.5);
-      font-weight: 500;
+    #greenLight {
+      background-color: lightgreen;
     }
 
-    .screenStats {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-    }
+  .screen {
+    width: 275px;
+    height: 200px;
+    background-color: azure;
+    border: 12pt solid darkgrey;
+    border-bottom: 20pt solid darkgray;
+    border-top: 15pt solid darkgray;
+    border-radius: 3pt;
+  }
+
+  .screenLit{
+    width: 243px;
+    height: 157px;
+    border: 3pt solid azure;
+    border-radius: 3pt;
+  }
+
+  .screenBorder {
+    border: 2pt solid rgb(66, 65, 65);
+    box-shadow: 5px 10px 10pt gray;
+    border-radius: 5pt;
+  }
+
+  .screenLine1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: transparent;
+    text-shadow: 0 0 1px rgba(0,0,0,0.5);
+    font-weight: 500;
+  }
+
+  .screenStats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 85%;
+  }
 
     .buttons > button {
       border-radius: 50%;
@@ -113,7 +179,7 @@ h2, h3{
     #circleButton {
       border-radius: 50%;
       background: rgb(66, 65, 65); 
-      border: 1pt solid black;
+      border: 2pt solid black;
       width: 50px;
       height: 50px;
       box-shadow: 2px 5px 10pt darkgray;
@@ -133,6 +199,20 @@ h2, h3{
     
     #rectangle2{
       background-color: green;
+    }
+
+    #buttonsCenter {
+      /*margin-right: 5%;*/
+    }
+    
+    #greenButton {
+      clear: both;
+      margin-top: 10pt;
+      width: 100px;
+      height: 60%;
+      background-color: rgb(61, 198, 75);
+      border: 2pt solid black;
+      border-radius: 2pt;
     }
     
     .cross { 
@@ -156,63 +236,10 @@ h2, h3{
       border-radius: 5pt;
     }
 
-    #buttonsCenter {
-      /*margin-right: 5%;*/
-    }
     
-    #greenButton {
-      clear: both;
-      margin-top: 10pt;
-      width: 100px;
-      height: 60%;
-      background-color: rgb(61, 198, 75);
-      border: 2pt solid black;
-      border-radius: 2pt;
-    }
-    
-    .buttons {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      width: 85%;
-    }
-    
-    #blueLight{
-      border-radius: 50%;
-      border: 2pt solid white;
-      background-color: turquoise;
-      background-image: radial-gradient(farthest-corner at 40px 10px ,aqua, white);
-      height: 50px;
-      width: 50px;
-      margin-left: 6%;
-      margin-bottom: 2%;
-    }
-    
-    .pokeHeader {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      width: 100%;
-      border-bottom: 5pt solid black;
-      /*box-shadow: 5px 10px black;*/
-    }
-    
-    #redLight, #yellowLight, #greenLight {
-      height: 15px;
-      width: 15px;
-      border: 1pt solid white;
-      border-radius: 50%;
-    }
-    
-    #yellowLight {
-      background-color: yellow;
-    }
-    
-    #greenLight {
-      background-color: lightgreen;
-    }
-
-
+/******************************************
+/* MIDDLE BAR IN POKEDEX -- FOLDED SECTION
+/*******************************************/
 .middleBar {
   background-color: #DF0024;
   border: 5pt solid black;
@@ -253,7 +280,10 @@ h2, h3{
       border-top: 5pt solid black;
     }
 
-/******Pokedex Right Panel*******/
+
+/******************************************
+/* POKEDEX RIGHT PANEL
+/*******************************************/
 .pokedexRightPanel {
   display: flex;
   flex-direction: column;
@@ -302,8 +332,9 @@ h2, h3{
       border: 2pt solid rgb(66, 65, 65);
     }
 
+
 /******************************************
-/* ADDITIONAL STYLES
+/* POKEMON TYPE COLORS
 /*******************************************/
 /*pokemon type colors*/
 .fire{
@@ -342,7 +373,7 @@ h2, h3{
 /******************************************
 /* MEDIA QUERIES
 /*******************************************/
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 400px) {
   .pokedex {
     flex-direction: column;
     align-items: center;
@@ -355,6 +386,7 @@ h2, h3{
   .pokedexLeftPanel {
     border-right: 5pt solid black;
     border-top-right-radius: 3pt;
+    height: 450px;
   }
 
     .pokeHeader {
@@ -392,6 +424,36 @@ h2, h3{
       }
 
   .middleBar {
+    /*display: none;*/
+    flex-direction: row;
+    width: 325px;
+    height: 30px;
+    border: 0;
+  }
+
+  .notch1 {
+    width: 97px;
+    height: 30px;
+    border: 0;
+    border-left: 5pt solid black;
+  }
+
+  .notch2 {
+    width: 97px;
+    height: 30px;
+    border-top: 0;
+    border-right: 5pt solid black;
+  }
+
+  .middleBar > div:first-of-type {
     display: none;
+  }
+
+  .middleBarMiddle {
+    width: 250px;
+  }
+
+  .pokedexRightPanel {
+    height: 350px;
   }
 }
