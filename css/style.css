@@ -109,6 +109,16 @@ h2, h3{
       height: 50px;
       box-shadow: 2px 5px 10pt darkgray;
     }
+
+    #circleButton {
+      border-radius: 50%;
+      background: rgb(66, 65, 65); 
+      border: 1pt solid black;
+      width: 50px;
+      height: 50px;
+      box-shadow: 2px 5px 10pt darkgray;
+
+    }
     
     #rectangle1, #rectangle2 {
       float: left;
@@ -144,6 +154,10 @@ h2, h3{
       width: 70px; 
       border: 1pt solid black;
       border-radius: 5pt;
+    }
+
+    #buttonsCenter {
+      /*margin-right: 5%;*/
     }
     
     #greenButton {
@@ -204,6 +218,7 @@ h2, h3{
   border: 5pt solid black;
   border-left: 0;
   border-radius: 3pt;
+  border-top-left-radius: 0;
   /*border: 5pt solid rgb(66, 65, 65);*/
   height: 500px;
   width: 40px;
@@ -321,4 +336,62 @@ h2, h3{
 
 .electric, .ground {
   color: yellow;
+}
+
+
+/******************************************
+/* MEDIA QUERIES
+/*******************************************/
+@media screen and (max-width: 400px) {
+  .pokedex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pokedexLeftPanel, .pokedexRightPanel {
+    width: 325px;
+  }
+
+  .pokedexLeftPanel {
+    border-right: 5pt solid black;
+    border-top-right-radius: 3pt;
+  }
+
+    .pokeHeader {
+      border-bottom: 3pt solid black;
+    }
+
+    .buttons {
+      width: 90%;
+      justify-content: space-around;
+    }
+
+      #buttonsCenter {
+        margin-right: 5%;
+      }
+
+      #rectangle1, #rectangle2 {
+        margin-left: 10%;
+      }
+      
+      #greenButton {
+        width: 75px;
+        border: 1.5pt solid black;
+      }
+
+      .cross {
+        height: 50px;
+        width: 15px;
+      }
+
+      .cross:after {
+        height: 13px;
+        width: 50px;
+        top: 16px;
+        left: -20px;
+      }
+
+  .middleBar {
+    display: none;
+  }
 }
