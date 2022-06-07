@@ -13,7 +13,8 @@ body {
   align-items: center;
   font-family: monospace;
   color: gray;
-  background-image: url('../img/wallpaper.png');
+  background-image: url('../img/pokemonwallpaper.png');
+  background-size: cover;
 }
 
 input {
@@ -38,7 +39,7 @@ h2, h3{
   margin-top: 0;
 }
 
-img {
+#pokeImg {
   display: block;
   margin: 0 auto;
   width: 50%;
@@ -56,10 +57,6 @@ input, button {
   border-radius: 3pt;
 }
 
-:-ms-input-placeholder{
-  color: rgb(208,208,0);
-}
-
 .pokedex {
   display: flex;
   flex-direction: row;
@@ -75,10 +72,9 @@ input, button {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  border: 5pt solid black;
+  border: 4pt solid black;
   border-right: 0;
-  /*border: 5pt solid rgb(66, 65, 65);*/
-  border-radius: 3pt;
+  border-radius: 10pt;
   border-top-right-radius: 0;
   background-color: #DF0024;
   width: 400px;
@@ -90,19 +86,34 @@ input, button {
     flex-direction: row;
     justify-content: flex-start;
     width: 100%;
-    border-bottom: 5pt solid black;
+    border-bottom: 3.5pt solid black;
     /*box-shadow: 5px 10px black;*/
   }
+
+
+    @keyframes blink {
+      50% {
+        opacity: 0.5;
+      }
+
+      80% {
+        opacity: 1
+      }
+    }
+
+    .animate {
+      animation: blink 1s linear infinite;
+    }
 
     #blueLight{
       border-radius: 50%;
       border: 2pt solid white;
       background-color: turquoise;
-      background-image: radial-gradient(farthest-corner at 40px 10px ,aqua, white);
+      background-image: radial-gradient(farthest-corner at 40px 10px ,#4DB5FF, white);
       height: 50px;
       width: 50px;
       margin-left: 6%;
-      margin-bottom: 4%;
+      margin-bottom: 4%;;
     }
 
     #redLight, #yellowLight, #greenLight {
@@ -114,18 +125,19 @@ input, button {
     }
 
     #yellowLight {
-      background-color: yellow;
+      background-color: #E8CE29;
     }
 
     #greenLight {
-      background-color: lightgreen;
+      background-color: #4FA75C;
     }
 
   .screen {
     width: 275px;
     height: 200px;
-    background-color: azure;
-    border: 12pt solid darkgrey;
+   /* background-color: azure;*/
+    background-color: #222222;
+    border: 12pt solid #DFDFDF;
     border-bottom: 20pt solid darkgray;
     border-top: 15pt solid darkgray;
     border-radius: 3pt;
@@ -135,7 +147,7 @@ input, button {
     width: 243px;
     height: 157px;
     border: 3pt solid azure;
-    border-radius: 3pt;
+    border-radius: 1.5pt;
   }
 
   .screenBorder {
@@ -163,20 +175,21 @@ input, button {
   .buttons {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 85%;
   }
 
-    .buttons > button {
+    /*.buttons > button {
       border-radius: 50%;
       background: rgb(66, 65, 65); 
       border: 1pt solid black;
       width: 50px;
       height: 50px;
       box-shadow: 2px 5px 10pt darkgray;
-    }
+    }*/
 
     #circleButton {
+      margin-right: 15%;
       border-radius: 50%;
       background: rgb(66, 65, 65); 
       border: 2pt solid black;
@@ -191,6 +204,7 @@ input, button {
       width: 35%;
       height: 10%;
       border: 1pt solid black;
+      margin-left: 10%;
     }
     
     #rectangle1 {
@@ -200,10 +214,6 @@ input, button {
     #rectangle2{
       background-color: green;
     }
-
-    #buttonsCenter {
-      /*margin-right: 5%;*/
-    }
     
     #greenButton {
       clear: both;
@@ -211,11 +221,12 @@ input, button {
       width: 100px;
       height: 60%;
       background-color: rgb(61, 198, 75);
-      border: 2pt solid black;
-      border-radius: 2pt;
+      border: 1.5pt solid black;
+      border-radius: 3pt;
     }
     
     .cross { 
+      margin-left: 23%;
       background: rgb(66, 65, 65); 
       height: 75px; 
       position: relative; 
@@ -224,6 +235,7 @@ input, button {
       border-radius: 5pt;
       box-shadow: 2px 5px 5pt darkgray;
     } 
+
     .cross:after { 
       background: rgb(66, 65, 65); 
       content: ""; 
@@ -242,13 +254,12 @@ input, button {
 /*******************************************/
 .middleBar {
   background-color: #DF0024;
-  border: 5pt solid black;
+  border: 4pt solid black;
   border-left: 0;
-  border-radius: 3pt;
+  border-radius: 10pt;
   border-top-left-radius: 0;
-  /*border: 5pt solid rgb(66, 65, 65);*/
   height: 500px;
-  width: 40px;
+  width: 34px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -258,26 +269,26 @@ input, button {
  }
 
     .notch1{
-      border: 5pt solid black;
+      border: 4pt solid black;
       border-right: 0;
-      height: 95px;
-      background: linear-gradient(to right, #DF0024 0%, black 150%);
+      height: 87px;
+      background: linear-gradient(to right, #DF0024 0%, black 200%);
     }
 
     .middleBarMiddle {
-      border-left: 5pt solid black;
-      height: 267px;
+      border-left: 4pt solid black;
+      height: 231px;
     }
 
     .notch2 {
-      border-top: 5pt solid black;
-      border-left: 5pt solid black;
+      border-top: 4pt solid black;
+      border-left: 4pt solid black;
       height: 87px;
-      background: linear-gradient(to right, #DF0024 0%, black 150%);
+      background: linear-gradient(to right, #DF0024 0%, black 200%);
     }
 
     .notch:nth-of-type(2) {
-      border-top: 5pt solid black;
+      border-top: 4pt solid black;
     }
 
 
@@ -289,20 +300,21 @@ input, button {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  border: 5pt solid black;
-  /*border: 5pt solid rgb(66, 65, 65);*/
-  border-radius: 3pt;
+  border: 4pt solid black;
+  border-radius: 10pt;
+  border-top-left-radius: 0;
   background-color: #DF0024;
-  width: 400px;
-  height: 414px;
+  width: 370px;
+  height: 406px;
   box-shadow: 5px 10px 50pt #888888;
-  border-top: 5pt solid black;
+  border-top: 4pt solid black;
 }
     .screen2 {
       width: 75%;
       height: 25%;
       border-radius: 5pt;
       background-color: white;
+      background-color: #222222;
       border: 2pt solid rgb(66, 65, 65);
     }
 
@@ -330,6 +342,29 @@ input, button {
       border-radius: 3pt;
       background-color: #18A8FF;
       border: 2pt solid rgb(66, 65, 65);
+    }
+
+    .panel2Row3 {
+      display: flex;
+      flex-direction: row;
+      align-content: flex-start;
+    }
+    
+    .whiteButtons {
+      background-color: white;
+      height: 37px;
+      width: 50px;
+      border: 1.5pt solid black;
+      border-radius: 2pt;
+    }
+
+    #bigYellowLight{
+      height: 30px;
+      width: 30px;
+      border: 1pt solid white;
+      background-color: #E8CE29;
+      border-radius: 50%;
+      margin-left: 1.75%;
     }
 
 
@@ -384,7 +419,7 @@ input, button {
   }
 
   .pokedexLeftPanel {
-    border-right: 5pt solid black;
+    border-right: 3pt solid black;
     border-top-right-radius: 3pt;
     height: 450px;
   }

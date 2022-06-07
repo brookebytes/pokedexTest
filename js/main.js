@@ -10,13 +10,21 @@ function getFetch(){
       .then(data => {
         console.log(data)
         //document.querySelector('img').src=data.url;
+        document.querySelector('.screenLit').style.backgroundColor = 'white';
+        document.querySelector('#blueLight').classList.add("animate");
         document.querySelector('#pokeName').innerText = data.name;
         document.querySelector('#number').innerText = `#${data.id}`;
-        document.querySelector('img').src = data.sprites.other.dream_world.front_default;
+        document.querySelector('img').id = 'pokeImg';
+        document.querySelector('#pokeImg').src = data.sprites.other.dream_world.front_default;
+        if (data.sprites.other.dream_world.front_default==null){
+          document.querySelector('#pokeImg').src = data.sprites.other["official-artwork"].front_default;
+        }
+
         document.querySelector('#type').innerText = data.types[0].type.name;
         document.querySelector('#type').className = `${data.types[0].type.name}`;
         document.querySelector('#height').innerText = `${(data.height/3.048).toFixed(1)}'`;
         document.querySelector('#weight').innerText = `${(data.weight/4.536).toFixed(1)} lbs`;
+        document.querySelector('.screen2').style.backgroundColor = 'white';
         document.querySelector('#ability').innerText = `ability: ${data.abilities[0].ability.name}`
         document.querySelector('#move').innerText = `move: ${data.moves[6].move.name}`
       })
